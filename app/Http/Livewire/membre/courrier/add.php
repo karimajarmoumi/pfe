@@ -1,9 +1,11 @@
 <?php
 
-namespace App\Http\Livewire\Admin\Courrier;
+namespace App\Http\Livewire\membre\Courrier;
 
+use App\Models\Courrier;
 use Livewire\Component;
 use Auth;
+use GuzzleHttp\Psr7\Request;
 
 class Add extends Component
 {
@@ -15,7 +17,7 @@ class Add extends Component
     public $date;
     public function render()
     {
-        return view('livewire.admin.courrier.add');
+        return view('livewire.membre.courrier.add');
     }
     public function store(Request $req)
     {

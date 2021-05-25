@@ -1,9 +1,9 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.membre')
 @section('title','Dashboard')
 @push('css')
 @endpush
 @section('content')
-<div class="col-12">
+<div class="col-12"> 
             <!-- Default box -->
             <div class="card">
               <div class="card-header">

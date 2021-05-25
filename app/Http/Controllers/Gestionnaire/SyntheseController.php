@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Gestionnaire;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -12,15 +12,11 @@ class CourrierController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin');
+        $this->middleware('gestionnaire');
     }
     public function index()
     {
-        $courriers= Courrier::latest()->get();
-        return view('admin.courrier.index',compact('courriers'));
+        return view('gestionnaire.dashbord');
     }
-    public function add()
-    {
-        return view('admin.courrier.add');
-    }
+    
 }

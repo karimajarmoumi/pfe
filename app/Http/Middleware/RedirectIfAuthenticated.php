@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use App\Providers\RouteServiceProvider;
 use Closure;
 use guard;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 
 class RedirectIfAuthenticated
@@ -34,10 +35,6 @@ class RedirectIfAuthenticated
                return redirect()->route('gestionnaire.dashboard');
             }
             if (Auth::guard($guard)->check() && Auth::user()->role_id == 3)
-            { 
-               return redirect()->route('chef.dashboard');
-            }
-            if (Auth::guard($guard)->check() && Auth::user()->role_id == 4)
             { 
                return redirect()->route('membre.dashboard');
             }

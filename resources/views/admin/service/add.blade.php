@@ -6,4 +6,4 @@
 <livewire:admin.service.add/>
 @stop
 @push('js')
-@endpush
+@endpush 

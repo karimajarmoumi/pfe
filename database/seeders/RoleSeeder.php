@@ -22,9 +22,6 @@ class RoleSeeder extends Seeder
             'name'=>'gestionnaire',
         ]);
         DB::table('roles')->insert([
-            'name'=>'chef-service',
-        ]);
-        DB::table('roles')->insert([
             'name'=>'membre',
         ]);
     }

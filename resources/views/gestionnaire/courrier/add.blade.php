@@ -1,9 +1,9 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.gestionnaire')
 @section('title','Ajouter courrier')
 @push('css')
 @endpush
 @section('content')
-<livewire:admin.courrier.add/>
+<livewire:gestionnaire.courrier.add/>
 @stop
 @push('js')
 @endpush

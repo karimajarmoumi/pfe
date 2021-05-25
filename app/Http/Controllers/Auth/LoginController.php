@@ -61,14 +61,9 @@ class LoginController extends Controller
               return route('gestionnaire.dashboard');
               break;
             case 3:
-              return route('chef.dashboard');
-              break;
-            case 4:
               return route('membre.dashboard');
-              break; 
-        
-         
-        
+              break;
+            
             default:
               return '/home'; 
             break;

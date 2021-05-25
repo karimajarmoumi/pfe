@@ -69,7 +69,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\AdminMiddleware::class, 
         //'gestionnaire' => GestionnaireMiddleware::class,
         'gestionnaire' => \App\Http\Middleware\GestionnaireMiddleware::class, 
-        'chef' => \App\Http\Middleware\ChefMiddleware::class,
+         //'membre' => MembreMiddleware::class,
         'membre' => \App\Http\Middleware\MembreMiddleware::class,
     ];
 }

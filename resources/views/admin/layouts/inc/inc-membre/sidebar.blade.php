@@ -11,7 +11,7 @@
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="info">
-          <a href="#" class="d-block" style="color: #fff; font-size: 30px; " ><img classe="icon-admin" alt="" src="{{asset('/admin-256x256.png')}}" /><B>{{Auth::user()->name}}</B></a>
+          <a href="#" class="d-block" style="color: #fff; font-size: 30px; " ><img classe="icon-admin" alt="" src="{{asset('/53176.png')}}" /><B>{{Auth::user()->name}}</B></a>
         </div>
       
       </div>
@@ -26,59 +26,37 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview">
-            <a href="{{route('admin.dashboard')}}" class="nav-link {{Request::is('admin/dashboard')}} ? active : '' ">
+            <a href="{{route('membre.dashboard')}}" class="nav-link {{Request::is('membre/dashboard')}} ? active : '' ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Tableau de Bord
               </p>
             </a>
-            <ul class="nav nav-treeview">
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-hat-cowboy"></i>
-              <p>
-                Gestion des Services
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="{{route('service.view')}}" class="nav-link {{Request::is('admin/service') ? 'active':''}}">
-                 <!-- icon-circle !-->
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Tous les Services </p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{route('admin.service.add')}}" class="nav-link {{Request::is('admin/service') ? 'active':''}}">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p> Ajouter un Service </p>
-                </a>
-              </li>
-        </ul>
+    
         <ul class="nav nav-treeview">
           <li class="nav-item has-treeview menu-open">
             <a href="#" class="nav-link active">
-              <i class="fas fa-users-cog"></i>
+              <i class="fas fa-envelope"></i>
               <p>
-                Gestion des Utilisateurs
+                Courriers
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{route('users.view')}}" class="nav-link {{Request::is('admin/users') ? 'active':''}}">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Tous les Utilisateurs</p>
+                  <p>Mes Courriers</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{route('admin.users.add')}}" class="nav-link {{Request::is('admin/users') ? 'active':''}}">
+                <a href="#" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p> Ajouter un Utilisateur </p>
+                  <p> Ajouter un Courriers </p>
                 </a>
               </li>
         </ul>
+       
 
       </nav>
       <!-- /.sidebar-menu -->

@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('admin.layouts.gestionnaire')
 @section('title','Dashboard')
 @push('css')
 @endpush
@@ -19,7 +19,7 @@
               <div class="card-body">
                 Start creating your amazing application!
               </div>
-              <!-- /.card-body -->
+              <!-- /.card-body --> 
               <div class="card-footer">
                 Footer
               </div>

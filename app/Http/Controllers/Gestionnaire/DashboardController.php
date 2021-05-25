@@ -13,6 +13,6 @@ class DashboardController extends Controller
     }
     public function index()
     {
-        return view('secretaire.dashboard');
-    }
+        return view('gestionnaire.dashboard');
+    } 
 }

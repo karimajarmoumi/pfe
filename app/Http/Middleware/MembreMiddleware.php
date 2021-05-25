@@ -4,7 +4,8 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+
 
 
 
@@ -19,7 +20,7 @@ class MembreMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && Auth::user()->role_id == 4)
+        if(Auth::check() && Auth::user()->role_id == 3)
         { return $next($request);}
     
         else

@@ -18,14 +18,9 @@ use App\model\User;
 |
 */
 
-Route::get('/', function () {
+Route::get('/', function () { 
     return view('welcome');
 });
-
-
-
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 Route::get('/logout',function(){
@@ -33,24 +28,32 @@ Route::get('/logout',function(){
     return redirect('/login');
 });
 
+
+//Route-Administrateur
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('admin.dashboard');
-Route::get('getsionnaire/dashboard', [App\Http\Controllers\Gestionnaire\DashboardController::class, 'index'])->name('gestionnaire.dashboard');
 Route::get('admin/service', [App\Http\Controllers\Admin\ServiceController::class, 'index'])->name('service.view');
 Route::get('admin/service/add', [App\Http\Controllers\Admin\ServiceController::class, 'add'])->name('admin.service.add');
-Route::get('chef/dashboard', [App\Http\Controllers\Chef\DasboardController::class, 'index'])->name('chef.dashboard');
-Route::get('membre/dashboard', [App\Http\Controllers\Membre\DashboardController::class, 'index'])->name('membre.dashboard');
-Route::get('admin/users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.view');
-Route::get('admin/courrier', [App\Http\Controllers\Admin\CourrierController::class, 'index'])->name('courrier.view');
 Route::get('admin/service/edit/{id}', [App\Http\Controllers\Admin\ServiceController::class, 'edit'])->name('admin.service.edit');
 Route::get('admin/service/delete/{id}',[App\Http\Controllers\Admin\ServiceController::class, 'delete'])->name('admin.service.delete');
 Route::get('admin/users/edit/{id}', [App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin.users.edit');
 Route::get('admin/users/add', [App\Http\Controllers\Admin\UserController::class, 'add'])->name('admin.users.add');
-Route::get('admin/courrier/add', [App\Http\Controllers\Admin\CourrierController::class, 'add'])->name('admin.courrier.add');
 Route::get('admin/users/delete/{id}',[App\Http\Controllers\Admin\UserController::class, 'delete'])->name('admin.users.delete');
+Route::get('admin/users', [App\Http\Controllers\Admin\UserController::class, 'index'])->name('users.view');
+
+//Route-Gestionnaire:Secrètaire
+Route::get('gestionnaire/dashboard', [App\Http\Controllers\Gestionnaire\DashboardController::class, 'index'])->name('gestionnaire.dashboard');
+Route::get('gestionnaire/courrier', [App\Http\Controllers\Gestionnaire\CourrierController::class, 'index'])->name('courrier.view');
+Route::get('gestionnaire/courrier/add', [App\Http\Controllers\Gestionnaire\CourrierController::class, 'add'])->name('gestionnaire.courrier.add');
+
+//Route-Membre:utlisateurPersonnel
+Route::get('membre/dashboard', [App\Http\Controllers\Membre\DashboardController::class, 'index'])->name('membre.dashboard');
+Route::get('membre/courrier', [App\Http\Controllers\Membre\CourrierController::class, 'index'])->name('membre.courrier.view');
+Route::get('membre/courrier/add', [App\Http\Controllers\Membre\CourrierController::class, 'add'])->name('membre.courrier.add');
+
 
 //Route::get('/logout', [\App\Http\Controllers\Auth\LoginController::class,'logout'])->name('logout');
-Auth::routes();
+
 /*Route::group(['as' => 'admin.',
    'prefix' => 'admin',
    'namespace' => 'Admin',
@@ -76,4 +79,4 @@ Route::group(
 
     });
 */
-    Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    

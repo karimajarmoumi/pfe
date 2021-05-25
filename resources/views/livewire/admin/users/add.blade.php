@@ -12,21 +12,21 @@
 			<div class="card-body">
 				<div class="row">
 					<div class="col-4">
-						<label for="name"></label>
+						<label for="name">Nom</label>
 						<input type="text" id="name" wire:model="name" class="form-control">
 						@auth
-						<label for="email">email</label>
+						<label for="email">Email</label>
 						<input type="email" id="email" wire:model="email" class="form-control">
-						<label for="password">password</label>
+						<label for="password">Password</label>
 					
 						@csrf
 						<input type="password" id="password" wire:model="password" class="form-control">
 						@csrf
 						@endauth
-						<label for="role_id">role id</label>
-						<input type="number" id="role_id" wire:model="role_id" class="form-control">
+						<label for="role_id">Role id</label>
+						<input type="number" id="role_id" wire:model="role_id" class="form-control" min="2" max="3">
 						<label for="service_id">service_id</label>
-						<input type="number" id="service_id" wire:model="service_id" class="form-control">
+						<input type="number" id="service_id" wire:model="service_id" class="form-control" min="1">
 					</div>
 				</div>
 				
