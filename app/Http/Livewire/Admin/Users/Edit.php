@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Admin\Users;
 
+use App\Models\User;
 use Livewire\Component;
 
 class Edit extends Component
@@ -30,10 +31,10 @@ class Edit extends Component
         ]);
         $users = User::find($this->user_id);
         $users->name = $this->name;
-        $user->password = $this->password;
-        $user->email = $this->email;
-        $user->roel_id = $this->role_id;
-        $user->service_id = $this->service_id;
+        $users->password = $this->password;
+        $users->email = $this->email;
+        $users->roel_id = $this->role_id;
+        $users->service_id = $this->service_id;
         $users->save();
         session()->flash('succes','bien modifier');
     }

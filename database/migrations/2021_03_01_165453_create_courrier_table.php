@@ -18,7 +18,7 @@ class CreateCourrierTable extends Migration
             $table->string('from');
             $table->string('to');
             $table->string('file');
-            $table->string('date');
+            $table->date('date');
             $table->string('priority');
             $table->timestamps();
         });

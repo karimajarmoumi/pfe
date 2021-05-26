@@ -13,7 +13,7 @@ class Add extends Component
 {
     public $from;
     public $to;
-    public $file;  
+    public $file;
     public $priority;
     public $date;
     public function render()
@@ -23,27 +23,14 @@ class Add extends Component
     public function store(Request $request)
     {
         $this->validate([
-            'from' => 'required|string',
-            'to' => 'required|string',
-            'file' => 'required|string',
-            'date' =>'required|string',
-            'priority' =>'required|string',
+            'from' => 'required',
+            'to' => 'required',
+            'file' => 'required',
+            'date' =>'required',
+            'priority' =>'required',
 
             ]);
-
-
         $courrier = new Courrier();
-
-        // if ($request->hasFile('file')) {
-        //    $completeFileName = $request->file('file')->getClientOriginalName();
-        //    $fileNameOnly = pathinfo($completeFileName, PATHINFO_FILENAME);
-        //     $extension = $request->file('file')->getClientOriginalExtension();
-        //     $compPic = str_replace('', '', $fileNameOnly).'-'.rand() .''.time() .'.'.$extension;
-        //     $path = $request->file('file')->storeAs('public/posts', $compPic);
-           
-        //    $courrier->image=$compPic;
-       
-        // }
         if ($request->hasFile('file')) {
             //Get Just Ext
             $extention = $request->file('file')->getClientOriginalExtension();
@@ -53,15 +40,15 @@ class Add extends Component
             $path = $request->file('file')->storeAs('public/posts', $fileNameToStore);
             $courrier->file = $fileNameToStore;
         }
-        $courrier->from = $this->from;
-        $courrier->priority = $this->priority;
-        $courrier->to = $this->to;
-
-        $courrier->date = $this->date;
+        $courrier->from = $request->from;
+        $courrier->priority = $request->priority;
+        $courrier->to = $request->to;
+        $courrier->date = $request->date;
         $courrier->save();
-     
-        
+        session()->flash('succes','bien ajouter');
 
- 
+
+
+
     }
 }

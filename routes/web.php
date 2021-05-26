@@ -18,7 +18,7 @@ use App\model\User;
 |
 */
 
-Route::get('/', function () { 
+Route::get('/', function () {
     return view('welcome');
 });
 
@@ -58,7 +58,7 @@ Route::get('membre/courrier/add', [App\Http\Controllers\Membre\CourrierControlle
    'prefix' => 'admin',
    'namespace' => 'Admin',
    'middleware' => ['auth','admin'] ],function()
-    {   
+    {
     //Route::resource('/admin','Admin\DashboardController');
    // Route::get('dashboard', [App\Http\Controllers\Admin\DashboardController::class, 'index'])->name('dashboard');
      Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
@@ -71,7 +71,7 @@ Route::group(
     'prefix' => 'gestionnaire',
     'namespace' => 'Gestionnaire',
     'middleware' => ['auth','gestionnaire']],function()
-    {   
+    {
         // Route::resource('/gestionnaire','Gestionnaire\DashboardController');
         //Route::get('dashboard',[App\Http\Controllers\Gestionnaire\DashboardController::class , 'index'])->name('dashboard');
         Route::get('dashboard', [DashboardController::class,'index'])->name('dashboard');
@@ -79,4 +79,4 @@ Route::group(
 
     });
 */
-    
+

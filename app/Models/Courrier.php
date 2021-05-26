@@ -7,6 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Courrier extends Model
 {
-    protected $table = 'courrier';
-    use HasFactory;
+    protected $fillable = [
+        'from', 'to', 'file','priority','date'
+
+
+    ];
+
 }
