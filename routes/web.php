@@ -44,6 +44,7 @@ Route::get('admin/users', [App\Http\Controllers\Admin\UserController::class, 'in
 //Route-Gestionnaire:Secrètaire
 Route::get('gestionnaire/dashboard', [App\Http\Controllers\Gestionnaire\DashboardController::class, 'index'])->name('gestionnaire.dashboard');
 Route::get('gestionnaire/courrier', [App\Http\Controllers\Gestionnaire\CourrierController::class, 'index'])->name('courrier.view');
+Route::post('gestionnaire/courrier/add', [App\Http\Controllers\Gestionnaire\CourrierController::class, 'save']);
 Route::get('gestionnaire/courrier/add', [App\Http\Controllers\Gestionnaire\CourrierController::class, 'add'])->name('gestionnaire.courrier.add');
 
 //Route-Membre:utlisateurPersonnel

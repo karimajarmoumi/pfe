@@ -3,7 +3,7 @@
 @endpush
 @section('content')
 <div class="row">
-        <div class="col-12"> 
+        <div class="col-12">
           <div class="card">
             <div class="card-header">
                 <div class="row">
@@ -11,9 +11,9 @@
                     <div class="col-12 text-right">
                         <a href="{{route('gestionnaire.courrier.add')}}" class="btn btn-primary btn-sm">Ajouter un Courrier</a>
                     </div>
-                </div> 
+                </div>
 
-            </div>    
+            </div>
             <!-- /.card-header -->
             <div class="card-body">
               <table id="example2" class="table table-bordered table-hover">
@@ -29,21 +29,23 @@
                 </tr>
                 </thead>
                 <tbody>
-                @foreach($courriers as $key => $courrier)
-                <tr>
-                  <td>{{ $courrier->from }}</td>
-                  <td>{{ $courrier->to }}</td>
-                  <td>{{ $courrier->id }}</td>
-                  <td>{{ $courrier->date }}</td>
-                  <td>{{ $courrier->file }}</td>
-                  <td>{{ $courrier->priority }}</td>
+
+                  @foreach ($courrier as $cour)
+
+                    <tr>
+                  <td>{{ $cour->from }}</td>
+                  <td>{{ $cour->to }}</td>
+                  <td>{{ $cour->id }}</td>
+                  <td>{{ $cour->date }}</td>
+                  <td>{{ $cour->file }}</td>
+                  <td>{{ $cour->priority }}</td>
                   <td>
-                    <a href="#" class="btn btn-primary btn-sm">voire</a>                  
+                    <a href="#" class="btn btn-primary btn-sm">voire</a>
                   </td>
 
                 </tr>
                 @endforeach
-               
+
               </table>
             </div>
             <!-- /.card-body -->

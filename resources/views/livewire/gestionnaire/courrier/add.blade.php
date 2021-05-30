@@ -9,13 +9,11 @@
 			</div>
 		</div>
 
-		<form wire:submit.prevent="store">
-			<div class="card-body">
+        <form wire:submit.prevent="store" enctype="multipart/form-data">
+            			<div class="card-body">
 				<div class="row">
 					<div class="col-12">
 						<label for="from">source :</label>
-						   <!-- **wire:model** chaque fois qu'un élément d'entrée avec cette directive est mis à jour,
-					         	la propriété se synchronise avec sa valeur. !-->
 						<input type="email" id="from" wire:model="from" class="form=control">
 						<label for="to"> destination :</label>
 						<input type="email" id="to" wire:model="to" class="form=control">

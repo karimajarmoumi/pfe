@@ -9,6 +9,8 @@ use Livewire\Component;
 use Livewire\WithFileUploads;
 use Auth;
 
+Use Exception;
+
 class Add extends Component
 {
     public $from;
@@ -47,8 +49,7 @@ class Add extends Component
         $courrier->save();
         session()->flash('succes','bien ajouter');
 
-
-
-
     }
+
+
 }
